@@ -1,0 +1,15 @@
+#Código Guarda-Redes
+extends Node3D
+
+@onready var animacao = $AnimationPlayer
+
+func _ready():
+    pass
+
+func _input(event):
+    if event.is_action_pressed("espaco"):
+        var defesa = randi() % 2
+        if defesa == 0:
+            animacao.play("defesa_esquerda")
+        else:
+            animacao.play("defesa_direita")
