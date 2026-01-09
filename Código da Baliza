@@ -1,0 +1,11 @@
+#Código da Baliza
+extends Area3D
+
+func _ready():
+    connect("body_entered", _on_body_entered)
+
+func _on_body_entered(body):
+    if body.name == "Bola":
+        print("GOOOOOOL!")
+        body.queue_free()  # Remove a bola após golo
+        # Aqui podes adicionar lógica para reiniciar a bola ou atualizar o placar.
